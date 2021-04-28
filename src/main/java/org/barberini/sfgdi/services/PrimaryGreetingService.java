@@ -3,8 +3,11 @@ package org.barberini.sfgdi.services;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-@Service
-@Primary
+//import org.springframework.context.annotation.Primary;
+//import org.springframework.stereotype.Service;
+
+//@Primary
+//@Service
 public class PrimaryGreetingService implements GreetingService{
 
     @Override
