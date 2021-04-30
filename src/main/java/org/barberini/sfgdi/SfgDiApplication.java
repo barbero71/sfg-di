@@ -6,8 +6,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import java.util.ConcurrentModificationException;
-
 @SpringBootApplication
 public class SfgDiApplication {
 
@@ -47,7 +45,7 @@ public class SfgDiApplication {
 
 		System.out.println(constructorInjectedController.getGreeting());
 
-		FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
+		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
 
 		System.out.println(fakeDataSource.getUsername());
 		System.out.println(fakeDataSource.getPassword());
