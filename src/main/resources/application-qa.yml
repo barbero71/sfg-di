@@ -1,0 +1,4 @@
+marco:
+  username: YMLsuperuser-QA
+  password: YMLsomepassword-QA
+  jdbcurl: YMLsomeUrlforDB-QA
