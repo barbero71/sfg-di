@@ -1,15 +1,29 @@
 package org.barberini.sfgdi.config;
 
+import org.barberini.sfgdi.datasource.FakeDataSource;
 import org.barberini.sfgdi.repositories.EnglishGreetingRepository;
 import org.barberini.sfgdi.repositories.EnglishGreetingRepositoryImpl;
 import org.barberini.sfgdi.services.*;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.*;
 
+@PropertySource("classpath:datasource.properties")
 @Configuration
 public class GreetingServiceConfig {
+
+    @Bean
+    FakeDataSource fakeDataSource(@Value("${marco.username}") String username,
+                                  @Value("${marco.password}") String password,
+                                  @Value("${marco.jdbcurl}") String jdbcurl) {
+
+        FakeDataSource fakeDataSource = new FakeDataSource();
+
+        fakeDataSource.setUsername(username);
+        fakeDataSource.setPassword(password);
+        fakeDataSource.setJdbcurl(jdbcurl);
+
+        return fakeDataSource;
+    }
 
     @Profile({"ES","default"})
     @Bean("i18nService")
