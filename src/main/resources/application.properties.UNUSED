@@ -1,4 +1,4 @@
-spring.profiles.active=EN,qa
+spring.profiles.active=EN,QA
 marco.username=superuser
 marco.password=somepassword
 marco.jdbcurl=someUrlforDB
